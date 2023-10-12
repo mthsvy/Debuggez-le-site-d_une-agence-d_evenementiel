@@ -22,7 +22,7 @@ const Page = () => {
       <section className="SliderContainer">
         <Slider />
       </section>
-      <section className="ServicesContainer" id="nos-services"> {/* Ajout de l'id pour la redirection du lien du menu (service,realisation,equipe)  */}
+      <section className="ServicesContainer" id="nos-services"> {/* Ajout de l'id pour la redirection du lien des menu (service,realisation,equipe)  */}
         <h2 className="Title">Nos services</h2>
         <p>Nous organisons des événements sur mesure partout dans le monde</p>
         <div className="ListContainer">
