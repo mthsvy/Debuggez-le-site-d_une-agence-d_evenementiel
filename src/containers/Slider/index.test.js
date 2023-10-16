@@ -3,6 +3,23 @@ import Slider from "./index";
 import { api, DataProvider } from "../../contexts/DataContext";
 
 const data = {
+  events: [
+    {
+      id: 1,
+      type: "conférence",
+      date: "2022-04-29T20:28:45.744Z",
+      title: "User&product MixUsers",
+      cover: "/images/alexandre-pellaes-6vAjp0pscX0-unsplash.png",
+      description: "Présentation des nouveaux usages UX.",
+      nb_guesses: 900,
+      periode: "14-15-16 Avril",
+      prestations: [
+        "1 espace d’exposition",
+        "1 scéne principale",
+        "1 espace de restaurations",
+      ],
+    },
+  ],
   focus: [
     {
       title: "World economic forum",
