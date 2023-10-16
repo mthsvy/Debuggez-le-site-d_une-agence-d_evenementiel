@@ -2,8 +2,6 @@ import Menu from "../../containers/Menu";
 import ServiceCard from "../../components/ServiceCard";
 import EventCard from "../../components/EventCard";
 import PeopleCard from "../../components/PeopleCard";
-
-import "./style.scss";
 import EventList from "../../containers/Events";
 import Slider from "../../containers/Slider";
 import Logo from "../../components/Logo";
@@ -12,7 +10,7 @@ import Form from "../../containers/Form";
 import Modal from "../../containers/Modal";
 import { useData } from "../../contexts/DataContext";
 
-const Page = () => {
+export const Page = () => {
   const { last } = useData();
   return (
     <>
@@ -117,7 +115,7 @@ const Page = () => {
         <div className="col presta">
           <h3>Notre derniére prestation</h3>
 
-          {last ? ( // Erreur dans la console car last est undefined
+          {last ? (
             <EventCard
               imageSrc={last?.cover}
               title={last?.title}
@@ -160,5 +158,3 @@ const Page = () => {
     </>
   );
 };
-
-export default Page;
