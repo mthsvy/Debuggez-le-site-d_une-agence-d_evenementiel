@@ -12,7 +12,11 @@ const Slider = () => {
   );
   const nextCard = () => {
     setTimeout(
-      () => setIndex(index < byDateDesc.length -1 ? index + 1 : 0), // defilement des images
+      () => {
+        if (byDateDesc !== undefined) {
+          setIndex(index < byDateDesc.length - 1 ? index + 1 : 0);
+        }
+      }, // defilement des images
       5000
     );
   };
@@ -23,7 +27,7 @@ const Slider = () => {
     <div className="SlideCardList">
       {byDateDesc?.map((event, idx) => (
         <div key={event.title}>
-          <div            
+          <div
             className={`SlideCard SlideCard--${
               index === idx ? "display" : "hide"
             }`}
@@ -41,10 +45,10 @@ const Slider = () => {
             <div className="SlideCard__pagination">
               {byDateDesc.map((focus, radioIdx) => (
                 <input
-                  key={focus.title}// Valeur unique pour chaques bullet point
+                  key={focus.title} // Valeur unique pour chaques bullet point
                   type="radio"
                   name="radio-button"
-                  checked={index === radioIdx}// defilement des bullet point
+                  checked={index === radioIdx} // defilement des bullet point
                   readOnly
                 />
               ))}
