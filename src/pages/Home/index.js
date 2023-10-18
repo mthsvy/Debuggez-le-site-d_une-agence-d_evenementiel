@@ -117,7 +117,7 @@ const Page = () => {
         <div className="col presta">
           <h3>Notre derniére prestation</h3>
 
-          {last ? ( // Erreur dans la console car last est undefined
+          {last !== undefined && Object.keys(last).length !== 0 ? (
             <EventCard
               imageSrc={last?.cover}
               title={last?.title}
