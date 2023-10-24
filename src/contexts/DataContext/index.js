@@ -31,7 +31,7 @@ export const DataProvider = ({ children }) => {
     getData();
   });
   const last = data?.events
-    ? data.events.sort((a, b) => (a.date > b.date ? 1 : -1))[0]
+    ? data.events.sort((a, b) => (a.date < b.date ? 1 : -1))[0]
     : {};
   return (
     <DataContext.Provider
