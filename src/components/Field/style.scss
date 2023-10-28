@@ -1,4 +1,4 @@
-@import "src/colors.scss";
+@import "../../colors.scss";
 
 .inputField {
   display: flex;
@@ -15,7 +15,6 @@ input {
   height: 60px;
   min-width: 424px;
   font-size: 16px;
-  text-transform: capitalize;
   padding-left: 16px;
   border-radius: 4px;
   border: none;
