@@ -30,7 +30,7 @@ const data = {
       cover: "/images/stem-list-EVgsAbL51Rk-unsplash.png",
       description:
         "Présentation des outils analytics aux professionnels du secteur",
-      nb_guesses: 1300,
+      nb_guesses: 1500,
       periode: "24-25-26 Février",
       prestations: ["1 espace d’exposition", "1 scéne principale"],
     },
@@ -94,5 +94,47 @@ describe("When a page is created", () => {
     );
     await screen.findByText("boom");
     // to implement
+  });
+});
+
+// TEST FONCTIONNEL OUVERTURE DE LA MODALE DANS LE HOME
+describe("When i click on an event", () => {
+  it("a modal is open", async () => {
+    api.loadData = jest.fn().mockReturnValue(data);
+    render(
+      <DataProvider>
+        <Home />
+      </DataProvider>
+    );
+    await screen.findByText("Conférence #productCON");
+    fireEvent(
+      await screen.findByText("Conférence #productCON"),
+      new MouseEvent("click", {
+        cancelable: true,
+        bubbles: true,
+      })
+    );
+    await screen.findByText("1300 participants");
+  });
+});
+
+// TEST FONCTIONNEL LES DETAIL DANS LA MODAL
+describe("we click on the last event", () => {
+  it("the event detail is displayed", async () => {
+    api.loadData = jest.fn().mockReturnValue(data);
+    render(
+      <DataProvider>
+        <Home />
+      </DataProvider>
+    );
+    await screen.findByText("boom");
+    fireEvent(
+      await screen.findByText("boom"),
+      new MouseEvent("click", {
+        cancelable: true,
+        bubbles: true,
+      })
+    );
+    await screen.findByText("1300 participants");
   });
 });
